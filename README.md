@@ -2,7 +2,7 @@
 
 API REST para gerenciamento de carrinho de compras desenvolvida em Ruby on Rails.
 
-## Dependências
+## DependÃªncias
 
 - Ruby 3.3.1
 - Rails 7.1.2
@@ -10,14 +10,14 @@ API REST para gerenciamento de carrinho de compras desenvolvida em Ruby on Rails
 - Redis 7.0.15
 - Sidekiq 7.3.5
 
-## Configuração do Ambiente
+## ConfiguraÃ§Ã£o do Ambiente
 
-###1. Instalação e inicialização do PostgreSQL
+### 1. InstalaÃ§Ã£o e inicializaÃ§Ã£o do PostgreSQL
 sudo apt update
 sudo apt install postgresql-16
 sudo service postgresql start
 
-### 2. Instalação, utilizaçáo e configuração do Redis
+### 2. InstalaÃ§Ã£o, utilizaÃ§Ã¡o e configuraÃ§Ã£o do Redis
 sudo apt install redis-server
 wget https://download.redis.io/releases/redis-7.0.15.tar.gz
 tar xzf redis-7.0.15.tar.gz
@@ -28,23 +28,23 @@ sudo mkdir /etc/redis
 sudo cp redis.conf /etc/redis/
 redis-server /etc/redis/redis.conf
 
-### 3. Configuração do Projeto - Clonar o repositório: 
+### 3. ConfiguraÃ§Ã£o do Projeto - Clonar o repositÃ³rio: 
 git clone https://github.com/laralprb/shopping_cart_api.git
 cd shopping_cart_api
 
-### 4. Instalar dependências
+### 4. Instalar dependÃªncias
 bundle install
 
 ### 5. Configurar banco de dados
 rails db:create
 rails db:migrate
 
-###6. Iniciar os Serviços
+### 6. Iniciar os ServiÃ§os
 
 -Terminal 1: Servidor Rails
 rails s
 
-- Terminal 2: Sidekiq
+-Terminal 2: Sidekiq
 bundle exec sidekiq
 
 ## Funcionalidades
@@ -84,8 +84,8 @@ curl -X POST http://localhost:3000/cart/add_items \
 ## Jobs em Background
 
 O sistema utiliza Sidekiq para processar:
-- Marcação de carrinhos abandonados (após 3 horas sem interação)
-- Remoção de carrinhos abandonados (após 7 dias)
+- MarcaÃ§Ã£o de carrinhos abandonados (apÃ³s 3 horas sem interaÃ§Ã£o)
+- RemoÃ§Ã£o de carrinhos abandonados (apÃ³s 7 dias)
 
 Executar todos os testes
 bundle exec rspec
